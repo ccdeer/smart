@@ -26,11 +26,11 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/dswarbrick/smart"
-	"github.com/dswarbrick/smart/drivedb"
-	"github.com/dswarbrick/smart/megaraid"
-	"github.com/dswarbrick/smart/nvme"
-	"github.com/dswarbrick/smart/scsi"
+	"github.com/ccdeer/smart"
+	"github.com/ccdeer/smart/drivedb"
+	"github.com/ccdeer/smart/megaraid"
+	"github.com/ccdeer/smart/nvme"
+	"github.com/ccdeer/smart/scsi"
 )
 
 const (

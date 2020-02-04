@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/dswarbrick/smart/ata"
-	"github.com/dswarbrick/smart/drivedb"
-	"github.com/dswarbrick/smart/utils"
+	"github.com/ccdeer/smart/ata"
+	"github.com/ccdeer/smart/drivedb"
+	"github.com/ccdeer/smart/utils"
 )
 
 // SATDevice is a simple wrapper around an embedded SCSIDevice type, which handles sending ATA
@@ -33,7 +33,7 @@ type SATDevice struct {
 	SCSIDevice
 }
 
-func (d *SATDevice) identify() (ata.IdentifyDeviceData, error) {
+func (d *SATDevice) Identify() (ata.IdentifyDeviceData, error) {
 	var identBuf ata.IdentifyDeviceData
 
 	respBuf := make([]byte, 512)
@@ -82,7 +82,7 @@ func (d *SATDevice) PrintSMART(db *drivedb.DriveDb, w io.Writer) error {
 
 	fmt.Fprintln(w, "SCSI INQUIRY:", inqResp)
 
-	identBuf, err := d.identify()
+	identBuf, err := d.Identify()
 	if err != nil {
 		return err
 	}

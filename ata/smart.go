@@ -19,7 +19,7 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/dswarbrick/smart/drivedb"
+	"github.com/ccdeer/smart/drivedb"
 )
 
 // Individual SMART attribute (12 bytes)
